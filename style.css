@@ -1,0 +1,234 @@
+/* ============================================================
+   SITE INSTITUCIONAL — CANDIDATO
+   Template white-label. Para personalizar por candidato,
+   mude apenas a variável --accent abaixo e o conteúdo do HTML.
+
+   Sugestões de --accent por candidato:
+     Azul institucional  #1f5c8f
+     Verde               #1f7a54
+     Vinho               #8f1f3a
+     Laranja terroso     #b5541f
+     Grafite             #34383f
+   ============================================================ */
+
+:root {
+  --accent: #1f5c8f;          /* <-- ÚNICA COR A TROCAR POR CANDIDATO */
+
+  --paper: #f6f4ef;
+  --paper-2: #fffdf9;
+  --ink: #1a1c22;
+  --muted: #5c6068;
+  --line: #e3ddd2;
+  --shadow: 24px 32px 60px -30px rgba(26, 28, 34, .28);
+
+  --font-display: "Newsreader", Georgia, serif;
+  --font-body: "Public Sans", system-ui, sans-serif;
+
+  --maxw: 620px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  /* atmosfera: leve halo do accent no topo, não chapado */
+  background-image:
+    radial-gradient(120% 60% at 50% -10%,
+      color-mix(in srgb, var(--accent) 9%, transparent) 0%,
+      transparent 60%);
+  background-repeat: no-repeat;
+}
+
+/* barra institucional no topo */
+.topbar {
+  height: 6px;
+  width: 100%;
+  background: var(--accent);
+}
+
+/* ---------- layout ---------- */
+.wrap {
+  flex: 1;
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(48px, 9vw, 96px) 24px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ---------- hero ---------- */
+.photo {
+  width: clamp(160px, 42vw, 220px);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 14px;
+  background: var(--paper-2);
+  box-shadow: var(--shadow);
+  outline: 1px solid var(--line);
+  outline-offset: 6px;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 560;
+  font-size: clamp(2.4rem, 8vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin-top: 34px;
+}
+
+.role {
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 16px;
+}
+
+.role .dot { color: var(--muted); margin: 0 .5em; font-weight: 400; }
+
+/* filete decorativo */
+.rule {
+  width: 46px;
+  height: 2px;
+  background: var(--accent);
+  margin: 30px 0;
+  border: 0;
+  opacity: .8;
+}
+
+.about {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 46ch;
+}
+
+/* ---------- contato ---------- */
+.contact {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.contact-label {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--paper-2);
+  background: var(--accent);
+  padding: 13px 26px;
+  border-radius: 999px;
+  max-width: 100%;
+  justify-content: center;
+  text-align: center;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+  box-shadow: 0 10px 24px -12px color-mix(in srgb, var(--accent) 70%, transparent);
+}
+.btn:hover { transform: translateY(-2px); filter: brightness(1.06); }
+.btn:active { transform: translateY(0); }
+.btn svg { width: 18px; height: 18px; }
+
+/* ---------- footer ---------- */
+.foot {
+  border-top: 1px solid var(--line);
+  padding: 28px 24px 40px;
+  text-align: center;
+  font-size: .82rem;
+  color: var(--muted);
+}
+.foot a { color: var(--accent); text-decoration: none; }
+.foot a:hover { text-decoration: underline; }
+.foot .sep { margin: 0 .6em; opacity: .5; }
+.foot .legal { display: block; margin-top: 12px; opacity: .85; }
+
+/* ---------- página de política ---------- */
+.doc {
+  flex: 1;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: clamp(40px, 7vw, 72px) 24px 48px;
+}
+.doc a.back {
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+}
+.doc a.back:hover { text-decoration: underline; }
+.doc h1 {
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-size: clamp(2rem, 6vw, 2.6rem);
+  letter-spacing: -0.015em;
+  margin: 22px 0 6px;
+}
+.doc .updated { color: var(--muted); font-size: .9rem; margin-bottom: 34px; }
+.doc h2 {
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-size: 1.3rem;
+  margin: 34px 0 10px;
+}
+.doc p, .doc li { color: #33363d; margin-bottom: 12px; }
+.doc ul { padding-left: 22px; }
+.doc .note {
+  background: color-mix(in srgb, var(--accent) 7%, var(--paper-2));
+  border-left: 3px solid var(--accent);
+  padding: 14px 18px;
+  border-radius: 4px;
+  font-size: .92rem;
+  color: var(--muted);
+  margin: 24px 0;
+}
+
+/* ---------- ajustes telas muito estreitas ---------- */
+@media (max-width: 380px) {
+  .role { letter-spacing: .1em; }
+  .role .dot { margin: 0 .35em; }
+  .btn { padding: 12px 20px; font-size: .95rem; }
+}
+
+/* ---------- animação de entrada ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(14px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+  .d1 { animation-delay: .05s; }
+  .d2 { animation-delay: .16s; }
+  .d3 { animation-delay: .27s; }
+  .d4 { animation-delay: .38s; }
+  .d5 { animation-delay: .49s; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+}

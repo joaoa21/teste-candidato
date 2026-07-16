@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ============ EDITAR POR CANDIDATO ============ -->
+  <title>Nome do Candidato</title>
+  <meta name="description" content="Página oficial de Nome do Candidato.">
+  <meta property="og:title" content="Nome do Candidato">
+  <meta property="og:description" content="Página oficial de Nome do Candidato.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="foto.webp">
+  <!-- ============================================== -->
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,560&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar"></div>
+
+  <main class="wrap">
+    <!-- FOTO: troque foto.webp pela imagem do candidato (comprima no Kompres → WebP) -->
+    <img class="photo reveal d1" src="avatar.jpg" alt="Retrato de Nome do Candidato">
+
+    <!-- NOME -->
+    <h1 class="name reveal d2">Edmar Oliveira</h1>
+
+    <!-- CARGO • CIDADE/UF • PARTIDO (edite conforme o candidato) -->
+    <p class="role reveal d2">
+      Candidato a Deputado Federal <span class="dot">•</span> PE <span class="dot">•</span> PL
+    </p>
+
+    <hr class="rule reveal d3">
+
+    <!-- INFORMAÇÕES BÁSICAS -->
+    <p class="about reveal d3">
+      Apresentação do candidato.
+    </p>
+
+    <!-- CONTATO -->
+    <section class="contact reveal d4">
+      <span class="contact-label">Contato</span>
+      <!-- E-MAIL: troque o endereço nos dois lugares -->
+      <a class="btn" href="mailto:contato@dominio.com.br">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        contato@edmardeoliveira.com.br
+      </a>
+    </section>
+  </main>
+
+  <footer class="foot reveal d5">
+    <a href="privacidade.html">Política de Privacidade</a>
+    <span class="sep">·</span>
+    <span>© <span id="ano"></span> Edmar Oliveira</span>
+
+    <!-- OBRIGATÓRIO NA PROPAGANDA ELEITORAL: confirme o texto/dados com o jurídico da campanha.
+         Ex.: identificação do contratante e nº de CNPJ, quando aplicável. -->
+    <span class="legal">Conteúdo de responsabilidade de Edmar Oliveira — PL.</span>
+  </footer>
+
+  <script>document.getElementById('ano').textContent = new Date().getFullYear();</script>
+</body>
+</html>
